@@ -1,0 +1,44 @@
+$primary-color: #6b63b5;
+$secondary-color: #000;
+$third-color:#fff;
+$fourth-color: #999999;
+
+$theme-colors: (
+    "gryffindor": linear-gradient(90deg, #FF0000 4.67%, #FED482 96.97%),
+    "slytherin": linear-gradient(135deg, #1C792B 0%, #82E95E 100%),
+    "ravenclaw": linear-gradient(135deg, #0597B7 0%, #66D1FF 100%),
+    "hufflepuff": linear-gradient(135deg, #FFC700 0%, #FFF388 100%),
+);
+
+$Gryffindor: linear-gradient(90deg, #FF0000 4.67%, #FED482 96.97%);
+$Slytherin: linear-gradient(135deg, #1C792B 0%, #82E95E 100%);
+$Ravenclaw: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
+$Hufflepuff: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+
+@mixin container {
+    display: flex;
+    width: 100vw;
+}
+
+$smartphone:'(max-width: 480px)';
+$desktop: '(min-width: 1024px)';
+
+@mixin tablets {
+    @media (min-width: 480px) and (max-width: 728px){
+        @content;
+    }
+}
+
+// p.seccion{
+//     font sice
+
+//     @media#{$smartphooe}{
+//         font-size: 12px;
+//         color: red;
+//     }
+
+//     @include tablets {
+//         font-size: 13px;
+//         color: green;
+//     }
+// }
