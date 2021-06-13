@@ -64,9 +64,11 @@ body {
   @include container;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   // background-color: red;
   margin-top: 2em;
 }
+
 //CardMini
 .CardMini {
   // position: absolute;
@@ -82,11 +84,12 @@ body {
   background:$third-color;
   border-radius: 5px;
   justify-content: center;
+  margin-bottom: 2em;
 
-  h4{
+  h5{
     position: absolute;
     // position: relative;
-    margin-top: 6em;
+    margin-top: 7em;
   }
 
   button{
