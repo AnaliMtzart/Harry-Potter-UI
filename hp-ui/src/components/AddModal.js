@@ -36,6 +36,33 @@ function AddModal(props) {
 
   console.log("inputs", character);
 
+  //post
+const url = 'http://localhost:3004/character';
+
+const addCharacter = () => {
+  // console.log('guardar', character)
+  fetch(url, {
+      method: 'POST', 
+      body: JSON.stringify(character), 
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
+
+//   fetch(url, {
+//   method: 'post',
+//   headers: {
+//     'Accept': 'application/json, text/plain, */*',
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify(character)
+// }).then(res => res.json())
+//   .then(res => console.log(res));
+
+}
+
   return (
     <Modal
       {...props}
@@ -133,13 +160,16 @@ function AddModal(props) {
             </div>
           </div>
           <div className="BtnFile">
-            <label htmlFor="file">FOTOGRAFÍA</label>
+            <label htmlFor="file">+ FOTOGRAFÍA</label>
             <input className="FileBtn" type="file" name="image" />
           </div>
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <Button className="Close" onClick={props.onHide}>
+      <Button className="Close" 
+        // onClick={props.onHide}
+        onClick={()=> {addCharacter()}}
+        >
           GUARDAR
         </Button>
       </Modal.Footer>
