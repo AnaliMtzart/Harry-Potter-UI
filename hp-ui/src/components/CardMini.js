@@ -24,7 +24,7 @@ function CardMini({ data }) {
               {/* style={{background: '$theme-colors{characrer.house}'}} */}
               <img className="CircleImg" src={character.image} alt="chracter" />
             </div>
-            <h5>{character.name}</h5>
+            <p className='NameCharacter'>{character.name}</p>
             <div className="Info">
               {character.alive ? <p>VIVO</p> : <p>FINADO</p>}
               {/* {character.hogwartsStudent ? <p>ESTUDIANTE</p> : <p>STAFF</p>} */}

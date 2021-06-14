@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
 @import "./Variables.scss";
+@import "~bootstrap/scss/bootstrap";
 
 body {
   background: $secondary-color;
@@ -79,19 +80,23 @@ body {
   justify-content: center;
   margin-bottom: 2em;
 
-  h5{
-    position: absolute;
-    // position: relative;
-    margin-top: 7em;
-  }
-
   button{
     position: relative;
     border: none;
     background: transparent;
-    top: 5em;
+    top: 4em;
     left: 1em;
   }
+}
+
+.NameCharacter{
+  
+    font-size: 14px;
+    position: absolute;
+    // position: relative;
+    margin-top: 7em;
+    font-weight: 700;
+  
 }
 
 .Photo {
@@ -143,6 +148,7 @@ body {
     padding: 0.5em;
     margin: -1px;
     width: 150px;
+
     img{
       margin-left: 0.5em;
       // width: 15%;
@@ -158,4 +164,69 @@ body {
 .Add{
   border-radius: 0px 10px 0px 0px;
 
+}
+
+///
+.AddContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  p{
+    margin-right: 7em;
+    font-size: 12px;
+  }
+  label{
+  font-size: 13px;
+  }
+}
+
+.AddText{
+  width: 150px;
+  height: 35px;
+  background: #e9e9e9;
+  border: none;
+  // opacity: 0.06;
+  border-radius: 2px 2px 0px 0px;
+  border-bottom: 1px solid #000;
+  color: black;
+}
+
+.Options{
+  display: flex;
+}
+
+.Radio1{
+  display: flex;
+  width: 40vw;
+  justify-content: space-around;
+  margin-right: 1em;
+
+  label{
+    // margin-left: 0.1em;
+    margin-top: -0.1em;
+
+  }
+  input{
+    display: inline-block;
+    border:solid #000;
+  }
+}
+
+.BtnFile{
+  font-size: 12px;
+  margin-top: 2em;
+}
+
+.FileBtn{
+    background: red;
+    border: none;
+    opacity: 0;
+    z-index: 9;
+    position: absolute;
+    right: 7em;
+}
+
+.Close{
+  margin-right: 5.5em;
 }
