@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import HpLogo from "./Assets/Images/Harry-Potter-W.png";
 import Favorites from "./Assets/Images/favorites.png";
 import Add from "./Assets/Images/add.png";
@@ -7,12 +8,16 @@ import CardMini from "./components/CardMini";
 import data from "./data/hp-characters.json";
 import AddModal from "./components/AddModal";
 import { DropdownButton, Dropdown } from "react-bootstrap";
+import Card from './components/Card';
 
 function App() {
   // console.log(data);
 
   const [view, setView] = useState("all");
   const [modalShow, setModalShow] = useState(false);
+
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isMobileOrTable = useMediaQuery({ query: "(max-width: 768px)" });
 
   const handleSetStudents = () => setView("students");
   const handleSetStaff = () => setView("staff");
@@ -32,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <img src={HpLogo} className="HpLogo" alt="logo"></img>
-      <h3 className="Title">Selecciona tu filtro</h3>
+      <p className="Title">Selecciona tu filtro</p>
       <div className="Btns">
         <button className="btn" onClick={handleSetStudents}>
           ESTUDIANTES
@@ -42,18 +47,39 @@ function App() {
         </button>
       </div>
       <div className="Cards">
-        {(() => {
-          switch (view) {
-            case "all":
-              return <CardMini data={data} />;
-            case "students":
-              return <CardMini data={students} />;
-            case "staff":
-              return <CardMini data={staff} />;
-            default:
-              return null;
-          }
-        })()}
+        {isMobileOrTable && (
+          <>
+            {(() => {
+              switch (view) {
+                case "all":
+                  return <CardMini data={data} />;
+                case "students":
+                  return <CardMini data={students} />;
+                case "staff":
+                  return <CardMini data={staff} />;
+                default:
+                  return null;
+              }
+            })()}
+          </>
+        )}
+        {isDesktop && (
+          <>
+            {(() => {
+              switch (view) {
+                // console.log(view);
+                case "all":
+                  return <Card data={data} />;
+                case "students":
+                  return <Card data={students} />;
+                case "staff":
+                  return <Card data={staff} />;
+                default:
+                  return null;
+              }
+            })()}
+          </>
+        )}
       </div>
       <div className="GroupBtns">
         <DropdownButton
