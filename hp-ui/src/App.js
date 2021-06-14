@@ -11,10 +11,10 @@ import data from "./data/hp-characters.json";
 function App() {
   // console.log(data);
 
-  const [view, setView] = useState(true);
+  const [view, setView] = useState('all');
 
-  const handleSetStudents = () => setView(true);
-  const handleSetStaff = () => setView(false);
+  const handleSetStudents = () => setView('students');
+  const handleSetStaff = () => setView('staff');
 
   const students = data.filter((student) => {
     return student.hogwartsStudent === true;
@@ -26,7 +26,7 @@ function App() {
     return staff.hogwartsStaff === true;
   })
 
-  // console.log(staff)
+   // console.log(staff)
 
   return (
     <div className="App">
@@ -42,7 +42,19 @@ function App() {
       </div>
       <div className='Cards'>
         {/* <CardMini data={data}/>  */}
-        {view ? <CardMini data={students}/> : <CardMini data={staff}/>}
+        {/* {view ? <CardMini data={students}/> : <CardMini data={staff}/>} */}
+        {/* {viewCard(view)} */}   
+      {(() => {
+        switch (view) {
+          // console.log(view);
+          case "all":   return <CardMini data={data}/>;
+          case "students": return <CardMini data={students}/>;
+          case "staff":  return <CardMini data={staff}/>;
+          default:      return null;
+        }
+      })()}
+    
+
       </div>
       <div className="GroupBtns">
         <button className="Favorites">
@@ -54,9 +66,10 @@ function App() {
           <img src={Add} alt="add" />
         </button>
       </div>
-      {/* {view ? <CardMini data={students}/> : <CardMini data={staff}/>} */}
     </div>
   );
 }
+
+
 
 export default App;
