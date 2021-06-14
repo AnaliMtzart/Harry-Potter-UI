@@ -4,6 +4,7 @@ import "../scss/Styles.scss";
 require("react-bootstrap/ModalHeader");
 
 function AddModal(props) {
+    
   const [character, setCharacter] = useState({
     name: "",
     birthday: "",

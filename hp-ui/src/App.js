@@ -6,6 +6,7 @@ import "./scss/Styles.scss";
 import CardMini from "./components/CardMini";
 import data from "./data/hp-characters.json";
 import AddModal from "./components/AddModal";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 
 function App() {
   // console.log(data);
@@ -55,10 +56,26 @@ function App() {
         })()}
       </div>
       <div className="GroupBtns">
-        <button className="Favorites">
-          FAVORITOS
-          <img src={Favorites} alt="favorites" />
-        </button>
+        <DropdownButton
+          className="Favorites"
+          id="button"
+          drop="up"
+          variant="secondary"
+          title={
+            <>
+              FAVORITOS
+              <img src={Favorites} alt="favorites" />
+            </>
+          }
+        >
+          <div>
+            <img src={Favorites} alt="favorites" />
+          </div>
+
+          <Dropdown.Item eventKey="1" className="Drop">
+            Character
+          </Dropdown.Item>
+        </DropdownButton>
         <button className="Add" onClick={() => setModalShow(true)}>
           AGREGAR
           <img src={Add} alt="add" />
