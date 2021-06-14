@@ -2,14 +2,15 @@
 
 ## 1. Instrucciones
 
-* Clonar el repositorio de manera local
-* Abrir el proyecto en VS o en otro editor de código
 * Abrir consola:
-    - Desde la consula hacer la ruta a la carpeta Harry-Potter-UI
+    - Clonar el repositorio de manera local
+    - Instalar paquetes con: npm install
+    - Desde la consola hacer la ruta a la carpeta Harry-Potter-UI
     - Ingresar: json-server --watch hp-characters.json --port 3004
         (para poder agregar un nuevo personaje)   
 * Desde VS/Editor de código:
-    -Abrir terminal
+    -Abrir el proyecto en VS o en otro editor de código
+    -Abrir nueva terminal
     -Acceder a la carpeta hp-ui
     -Ingresar en terminal: npm start
 * Desde el navegador ya se podrá visualizar la app/interfaz 
