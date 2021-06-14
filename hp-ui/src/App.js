@@ -8,7 +8,7 @@ import CardMini from "./components/CardMini";
 import data from "./data/hp-characters.json";
 import AddModal from "./components/AddModal";
 import { DropdownButton, Dropdown } from "react-bootstrap";
-import Card from './components/Card';
+import Card from "./components/Card";
 
 function App() {
   // console.log(data);
@@ -21,6 +21,7 @@ function App() {
 
   const handleSetStudents = () => setView("students");
   const handleSetStaff = () => setView("staff");
+  const handleSetDead = () => setView("dead");
 
   const students = data.filter((student) => {
     return student.hogwartsStudent === true;
@@ -34,6 +35,12 @@ function App() {
 
   // console.log(staff)
 
+  const deadCharacters = data.filter((dead) => {
+    return dead.alive === false;
+  });
+
+  // console.log('muertos', deadCharacters )
+
   return (
     <div className="App">
       <img src={HpLogo} className="HpLogo" alt="logo"></img>
@@ -44,6 +51,9 @@ function App() {
         </button>
         <button className="btn" onClick={handleSetStaff}>
           STAFF
+        </button>
+        <button className="btn" onClick={handleSetDead}>
+          FINADOS
         </button>
       </div>
       <div className="Cards">
@@ -57,6 +67,8 @@ function App() {
                   return <CardMini data={students} />;
                 case "staff":
                   return <CardMini data={staff} />;
+                case "dead":
+                  return <CardMini data={deadCharacters} />;
                 default:
                   return null;
               }
@@ -74,6 +86,8 @@ function App() {
                   return <Card data={students} />;
                 case "staff":
                   return <Card data={staff} />;
+                case "dead":
+                  return <Card data={deadCharacters} />;
                 default:
                   return null;
               }
