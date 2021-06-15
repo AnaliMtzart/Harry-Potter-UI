@@ -27,7 +27,7 @@ Data utilizada:
 
 <img align='center' width="100%" src="https://firebasestorage.googleapis.com/v0/b/analimtzart.appspot.com/o/HP-mobile.gif?alt=media&token=459f15a0-5138-48c6-b121-ad5cacd7831f"/>
 
-<img align='center' width="100%" src="https://firebasestorage.googleapis.com/v0/b/analimtzart.appspot.com/o/HP-desktop.gif?alt=media&token=aad17ebe-5f5d-47d5-8d1e-af14af981280"/>
+<img align='center' width="100%" src="https://bit.ly/3cLu7r5"/>
 
 ### 3. Instrucciones
 
